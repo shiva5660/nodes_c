@@ -1,4 +1,5 @@
 #!/bin/bash
+echo 1.01
 apt-get install -y sudo
 sudo apt-get update
 
