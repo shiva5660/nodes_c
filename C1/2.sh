@@ -31,9 +31,9 @@ wget -O rgym_exp/src/manager.py https://raw.githubusercontent.com/pulagam344/gsy
 wget -O modal-login/temp-data/userData.json https://raw.githubusercontent.com/pulagam344/gsyn_login/main/1/userData.json
 wget -O modal-login/temp-data/userApiKey.json https://raw.githubusercontent.com/pulagam344/gsyn_login/main/1/userApiKey.json
 wget -O swarm.pem https://raw.githubusercontent.com/pulagam344/swarm_peer/main/C_swarm_peers/1/swarm_3.pem
-sed -i 's|3000|3001|' hivemind_exp/chain_utils.py
-sed -i 's|REPLACE|3001|' run_rl_swarm.sh
-sed -i 's|3000|3001|' rgym_exp/config/rg-swarm.yaml
+sed -i 's|3000|4001|' hivemind_exp/chain_utils.py
+sed -i 's|REPLACE|4001|' run_rl_swarm.sh
+sed -i 's|3000|4001|' rgym_exp/config/rg-swarm.yaml
 
 # Part 2
 git clone https://github.com/gensyn-ai/rl-swarm.git /root/my_rl_swarm_2
@@ -44,9 +44,9 @@ wget -O rgym_exp/src/manager.py https://raw.githubusercontent.com/pulagam344/gsy
 wget -O modal-login/temp-data/userData.json https://raw.githubusercontent.com/pulagam344/gsyn_login/main/1/userData.json
 wget -O modal-login/temp-data/userApiKey.json https://raw.githubusercontent.com/pulagam344/gsyn_login/main/1/userApiKey.json
 wget -O swarm.pem https://raw.githubusercontent.com/pulagam344/swarm_peer/main/C_swarm_peers/1/swarm_4.pem
-sed -i 's|3000|3002|' hivemind_exp/chain_utils.py
-sed -i 's|REPLACE|3002|' run_rl_swarm.sh
-sed -i 's|3000|3002|' rgym_exp/config/rg-swarm.yaml
+sed -i 's|3000|4002|' hivemind_exp/chain_utils.py
+sed -i 's|REPLACE|4002|' run_rl_swarm.sh
+sed -i 's|3000|4002|' rgym_exp/config/rg-swarm.yaml
 
 
 #Function to run a swarm with logging
@@ -65,13 +65,13 @@ run_swarm() {
 monitor_swarms() {
   while true; do
     # Check swarm_1
-    if [ ! -f "/root/running_3001.txt" ]; then
+    if [ ! -f "/root/running_4001.txt" ]; then
       echo "[$(date +%H:%M:%S)]-[monitor] Swarm_1 stopped, restarting..."
       run_swarm "/root/my_rl_swarm_1" "swarm_1" &
     fi
 
     # Check swarm_2
-    if [ ! -f "/root/running_3002.txt" ]; then
+    if [ ! -f "/root/running_4002.txt" ]; then
       echo "[$(date +%H:%M:%S)]-[monitor] Swarm_2 stopped, restarting..."
       run_swarm "/root/my_rl_swarm_2" "swarm_2" &
     fi
